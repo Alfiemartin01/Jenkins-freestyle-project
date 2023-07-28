@@ -20,7 +20,7 @@ def test_books():
     #adding new object with different isbn and no author input given
     b2 = books.Book('ILW',14,14,'War') 
     assert books.books == [b1,b2]
-    assert 
+    
     
     #adding new object with same isbn as b1
     b3 = books.Book('ILW',13,12,'Romcom',"Athens")
