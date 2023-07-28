@@ -4,6 +4,9 @@ import apps.books as apbooks
 
 @app.route('/')
 def index():
+    '''
+    Main page of the flask app. 
+    Gives a brief instructional text explaining how to use the program'''
     return('''Welcome to the Books database! 
         please add /<string> seperated by commas 
         to give the app information. \n
@@ -14,7 +17,10 @@ def index():
         ''')
 
 @app.route('/<inplist>')
-def directing(inplist:str):
+def directing(inplist:str) -> str:
+    '''
+    checks to see if the input into the http link
+    the first item in the comma seperated string parameter dictates if the search function is run for books or if a new book object is created.'''
     inplist = inplist.replace(", ",",")
     inplist = inplist.split(",")
     
