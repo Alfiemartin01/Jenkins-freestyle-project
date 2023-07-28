@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module books</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">books</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Calfie%26jazz%5Conedrive%5Cdocuments%5Cgithub%5Cjenkins-freestyle-project%5Cpython%5Capps%5Cbooks.py">c:\users\alfie&jazz\onedrive\documents\github\jenkins-freestyle-project\python\apps\books.py</a></td></tr></table>
+    <p><span class="code">Create&nbsp;a&nbsp;class&nbsp;<a href="#Book">Book</a>.&nbsp;Each&nbsp;book&nbsp;<a href="builtins.html#object">object</a>&nbsp;should&nbsp;have&nbsp;the&nbsp;attributes:&nbsp;<br>
+-&nbsp;title<br>
+-&nbsp;author&nbsp;(default&nbsp;unknown)&nbsp;<br>
+-&nbsp;number&nbsp;of&nbsp;pages<br>
+-&nbsp;genre<br>
+-&nbsp;ISBN.&nbsp;<br>
+The&nbsp;class&nbsp;should&nbsp;define&nbsp;the&nbsp;following&nbsp;methods:<br>
+-&nbsp;__init__&nbsp;to&nbsp;set&nbsp;the&nbsp;attributes&nbsp;described&nbsp;above<br>
+-&nbsp;__str__&nbsp;to&nbsp;print&nbsp;a&nbsp;description&nbsp;of&nbsp;the&nbsp;book<br>
+-&nbsp;a&nbsp;search&nbsp;method&nbsp;which&nbsp;returns&nbsp;all&nbsp;books&nbsp;by&nbsp;a&nbsp;given&nbsp;author&nbsp;(requires&nbsp;tracking&nbsp;of&nbsp;objects)&nbsp;-&nbsp;if&nbsp;there&nbsp;are&nbsp;no&nbsp;books&nbsp;by&nbsp;the&nbsp;given&nbsp;author&nbsp;return&nbsp;an&nbsp;empty&nbsp;list<br>
+-&nbsp;a&nbsp;method&nbsp;to&nbsp;check&nbsp;the&nbsp;validity&nbsp;of&nbsp;a&nbsp;given&nbsp;ISBN-13&nbsp;-&nbsp;should&nbsp;return&nbsp;true&nbsp;if&nbsp;the&nbsp;ISBN&nbsp;is&nbsp;valid,&nbsp;false&nbsp;otherwise<br>
+As&nbsp;an&nbsp;additional&nbsp;stretch&nbsp;goal,&nbsp;create&nbsp;2&nbsp;subclasses&nbsp;for&nbsp;specific&nbsp;<br>
+genres&nbsp;and&nbsp;override&nbsp;the&nbsp;__init__&nbsp;method&nbsp;and&nbsp;__str__&nbsp;methods&nbsp;appropriately</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="books.html#Book">Book</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Book">class <strong>Book</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Book">Book</a>(title:&nbsp;str,&nbsp;pages:&nbsp;int,&nbsp;isbn:&nbsp;int,&nbsp;genre:&nbsp;str,&nbsp;author='Unknown')&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;hold&nbsp;all&nbsp;the&nbsp;information&nbsp;about&nbsp;a&nbsp;book.<br>
+&nbsp;<br>
+variables&nbsp;include:&nbsp;title:str&nbsp;,&nbsp;pages:int&nbsp;,&nbsp;isbn:int&nbsp;,&nbsp;genre:str&nbsp;,&nbsp;[author:str]<br>
+&nbsp;<br>
+Methods&nbsp;include:<br>
+<a href="#Book-__init__">__init__</a>(self,&nbsp;title:str,&nbsp;pages:int,&nbsp;isbn:int,&nbsp;genre:str,&nbsp;author&nbsp;=&nbsp;"Unknown")&nbsp;-&gt;None:&nbsp;Initialising&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;all&nbsp;the&nbsp;atrtributes<br>
+<a href="#Book-__str__">__str__</a>(self)&nbsp;-&gt;&nbsp;None:&nbsp;outputs&nbsp;a&nbsp;string&nbsp;with&nbsp;title,&nbsp;pages,&nbsp;genre&nbsp;and&nbsp;author&nbsp;attributes<br>
+<a href="#Book-valid_isbn">valid_isbn</a>(isbn:int)&nbsp;-&gt;&nbsp;bool:&nbsp;used&nbsp;to&nbsp;check&nbsp;to&nbsp;see&nbsp;if&nbsp;the&nbsp;isbn&nbsp;already&nbsp;exists,&nbsp;if&nbsp;it&nbsp;exists&nbsp;it&nbsp;will&nbsp;return&nbsp;False<br>
+<a href="#Book-search">search</a>(author:str)&nbsp;-&gt;&nbsp;list:&nbsp;used&nbsp;to&nbsp;search&nbsp;an&nbsp;author&nbsp;and&nbsp;return&nbsp;all&nbsp;the&nbsp;book&nbsp;<a href="builtins.html#object">object</a>&nbsp;associated&nbsp;with&nbsp;the&nbsp;name<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Book-__init__"><strong>__init__</strong></a>(self, title: str, pages: int, isbn: int, genre: str, author='Unknown') -&gt; None</dt><dd><span class="code">This&nbsp;method&nbsp;is&nbsp;used&nbsp;to&nbsp;initialise&nbsp;a&nbsp;new&nbsp;book&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;all&nbsp;of&nbsp;the&nbsp;parameters&nbsp;as&nbsp;attributes.<br>
+It&nbsp;will&nbsp;also&nbsp;add&nbsp;this&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;the&nbsp;books&nbsp;list,&nbsp;so&nbsp;it&nbsp;can&nbsp;be&nbsp;recalled&nbsp;later.<br>
+if&nbsp;the&nbsp;same&nbsp;book&nbsp;exists&nbsp;with&nbsp;the&nbsp;same&nbsp;isbn&nbsp;number.&nbsp;the&nbsp;old&nbsp;book&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;edited&nbsp;instead&nbsp;with&nbsp;the&nbsp;new&nbsp;parameters.</span></dd></dl>
+
+<dl><dt><a name="Book-__str__"><strong>__str__</strong></a>(self) -&gt; None</dt><dd><span class="code">prints&nbsp;the&nbsp;title,&nbsp;author,&nbsp;genre&nbsp;and&nbsp;number&nbsp;of&nbsp;pages&nbsp;of&nbsp;a&nbsp;book.</span></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Book-search"><strong>search</strong></a>(author: str) -&gt; list</dt><dd><span class="code">This&nbsp;search&nbsp;method&nbsp;take&nbsp;in&nbsp;the&nbsp;name&nbsp;of&nbsp;an&nbsp;author&nbsp;and&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;titles&nbsp;of&nbsp;<a href="#Book">Book</a>&nbsp;objects&nbsp;which&nbsp;match&nbsp;the&nbsp;author&nbsp;parameter.</span></dd></dl>
+
+<dl><dt><a name="Book-valid_isbn"><strong>valid_isbn</strong></a>(isbn: int) -&gt; bool</dt><dd><span class="code">This&nbsp;method&nbsp;takes&nbsp;in&nbsp;an&nbsp;isbn&nbsp;and&nbsp;checks&nbsp;to&nbsp;see&nbsp;if&nbsp;a&nbsp;book&nbsp;<a href="builtins.html#object">object</a>&nbsp;already&nbsp;has&nbsp;the&nbsp;same&nbsp;number.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>books</strong> = []</td></tr></table>
+</body></html>
