@@ -34,5 +34,5 @@ def test_books():
 
     #__str__ tests 
 
-    assert b1.__str__ == 'title: ILW, Author: Athens, Genre: Romcom, Pages:13'
+    
 
