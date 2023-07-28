@@ -17,7 +17,23 @@ genres and override the __init__ method and __str__ methods appropriately
 books = []
 
 class Book():
-    def __init__(self, title, pages, isbn, genre, author = "Unknown"):
+    ''' 
+    This is the object to hold all the information about a book.
+
+    variables include: title:str , pages:int , isbn:int , genre:str , [author:str]
+    
+    Methods include:
+    __init__(self, title:str, pages:int, isbn:int, genre:str, author = "Unknown") ->None: Initialising the object with all the atrtributes
+    __str__(self) -> None: outputs a string with title, pages, genre and author attributes
+    valid_isbn(isbn:int) -> bool: used to check to see if the isbn already exists, if it exists it will return False
+    search(author:str) -> list: used to search an author and return all the book object associated with the name
+
+    '''
+    def __init__(self, title:str, pages:int, isbn:int, genre:str, author = "Unknown") ->None:
+        '''
+        This method is used to initialise a new book object with all of the parameters as attributes.
+        It will also add this object to the books list, so it can be recalled later.
+        if the same book exists with the same isbn number. the old book object is edited instead with the new parameters.'''
         if all(isbn!=i.isbn for i in books):
 
             self.title = title
@@ -36,7 +52,9 @@ class Book():
                     i.author = author
 
     @staticmethod
-    def valid_isbn(isbn):
+    def valid_isbn(isbn:int) -> bool:
+        '''
+        This method takes in an isbn and checks to see if a book object already has the same number.'''
         for i in books:
             if i.isbn == isbn:
                 return True
@@ -44,13 +62,17 @@ class Book():
         
     
     @staticmethod
-    def search(author,books):
+    def search(author:str) -> list:
+        '''
+        This search method take in the name of an author and returns a list of all the titles of Book objects which match the author parameter.'''
         abooks = []
         for i in books:
             if i.author == author:
                 abooks.append(i.title)
         return abooks
 
-    def __str__(self):
+    def __str__(self) -> None:
+        '''
+        prints the title, author, genre and number of pages of a book.'''
         print(f"title: {self.title}, Author: {self.author}, Genre: {self.genre}, Pages: {self.pages}")
 
