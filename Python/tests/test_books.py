@@ -26,8 +26,8 @@ def test_books():
     b3 = books.Book('ILW',13,12,'Romcom',"Athens")
     
     assert b1.title == 'ILW'
-    assert b1.pages == '13'
-    assert b1.isbn == '12'
+    assert b1.pages == 13
+    assert b1.isbn == 12
     assert b1.genre == 'Romcom'
     assert b1.author == 'Athens'
     assert books.books == [b1,b2]
